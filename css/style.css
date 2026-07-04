@@ -1,0 +1,261 @@
+/* ============================================
+   CTBS Cinema Theme - style.css
+   ============================================ */
+
+:root {
+  --cinema-dark: #15131c;
+  --cinema-darker: #0d0c12;
+  --cinema-red: #e63950;
+  --cinema-gold: #f0b429;
+  --cinema-light: #f4f4f6;
+  --cinema-card: #1f1c29;
+  --cinema-muted: #9b97ad;
+}
+
+body {
+  background-color: var(--cinema-light);
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  color: #25232c;
+}
+
+/* ---------- Navbar ---------- */
+.cinema-navbar {
+  background: linear-gradient(90deg, var(--cinema-darker), var(--cinema-dark));
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+.cinema-navbar .nav-link {
+  color: #d8d6e2 !important;
+  font-weight: 500;
+}
+.cinema-navbar .nav-link:hover {
+  color: var(--cinema-gold) !important;
+}
+.cinema-navbar .navbar-brand {
+  color: var(--cinema-gold) !important;
+  letter-spacing: .5px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: radial-gradient(circle at top right, #2b2440, var(--cinema-darker));
+  color: #fff;
+  padding: 80px 0;
+  border-radius: 0 0 30px 30px;
+  margin-bottom: 40px;
+}
+.hero h1 {
+  font-weight: 800;
+  font-size: 2.8rem;
+}
+.hero .text-accent { color: var(--cinema-gold); }
+.hero p { color: #c9c6d8; }
+
+/* ---------- Cards ---------- */
+.movie-card {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+  height: 100%;
+}
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.15);
+}
+.movie-poster {
+  height: 230px;
+  background: linear-gradient(135deg, var(--cinema-dark), #382f52);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinema-gold);
+  font-size: 3rem;
+}
+.movie-card .card-body { padding: 1.1rem 1.2rem; }
+.movie-card .badge-genre {
+  background: var(--cinema-red);
+  color: #fff;
+  font-weight: 500;
+}
+.movie-card .rating {
+  color: var(--cinema-gold);
+  font-weight: 600;
+}
+
+/* ---------- Buttons ---------- */
+.btn-cinema {
+  background: var(--cinema-red);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+}
+.btn-cinema:hover {
+  background: #c92840;
+  color: #fff;
+}
+.btn-gold {
+  background: var(--cinema-gold);
+  color: #15131c;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+}
+.btn-gold:hover {
+  background: #d99e1f;
+  color: #15131c;
+}
+
+/* ---------- Auth pages ---------- */
+.auth-card {
+  max-width: 460px;
+  margin: 50px auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.1);
+  border: none;
+}
+.auth-card .card-header {
+  background: var(--cinema-dark);
+  color: var(--cinema-gold);
+  border-radius: 16px 16px 0 0 !important;
+  font-weight: 700;
+  text-align: center;
+  padding: 1.2rem;
+}
+
+/* ---------- Show timing chips ---------- */
+.show-chip {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid var(--cinema-dark);
+  border-radius: 30px;
+  color: var(--cinema-dark);
+  font-weight: 600;
+  text-decoration: none;
+  margin: 4px;
+  transition: all .15s ease;
+}
+.show-chip:hover {
+  background: var(--cinema-dark);
+  color: var(--cinema-gold);
+}
+
+/* ---------- Seat map ---------- */
+.screen-bar {
+  width: 80%;
+  margin: 0 auto 40px auto;
+  height: 10px;
+  background: linear-gradient(90deg, transparent, var(--cinema-gold), transparent);
+  border-radius: 50%;
+  box-shadow: 0 8px 30px 4px rgba(240,180,41,.5);
+}
+.screen-label {
+  text-align: center;
+  color: var(--cinema-muted);
+  letter-spacing: 4px;
+  font-size: .8rem;
+  margin-bottom: 4px;
+}
+.seat-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.seat-row-label {
+  width: 24px;
+  font-weight: 700;
+  color: var(--cinema-muted);
+  text-align: center;
+}
+.seat {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px 8px 4px 4px;
+  border: 2px solid #cfcdd8;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .7rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all .12s ease;
+  color: #555;
+}
+.seat:hover:not(.booked) { border-color: var(--cinema-gold); }
+.seat.selected {
+  background: var(--cinema-gold);
+  border-color: var(--cinema-gold);
+  color: #15131c;
+  transform: scale(1.08);
+}
+.seat.booked {
+  background: #d8d6de;
+  border-color: #d8d6de;
+  color: #a9a6b5;
+  cursor: not-allowed;
+}
+.seat.premium { border-color: #8e7cc3; }
+.seat.vip { border-color: var(--cinema-red); }
+
+.seat-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 18px;
+  font-size: .85rem;
+  color: var(--cinema-muted);
+}
+.legend-box {
+  width: 18px; height: 18px; border-radius: 4px; display: inline-block;
+  border: 2px solid #cfcdd8;
+}
+
+/* ---------- Tables ---------- */
+.table-cinema thead {
+  background: var(--cinema-dark);
+  color: var(--cinema-gold);
+}
+
+/* ---------- Footer ---------- */
+.cinema-footer {
+  background: var(--cinema-darker);
+  color: var(--cinema-muted);
+}
+
+/* ---------- Admin ---------- */
+.admin-sidebar {
+  background: var(--cinema-darker);
+  min-height: 100vh;
+  color: #d8d6e2;
+}
+.admin-sidebar a {
+  color: #d8d6e2;
+  text-decoration: none;
+  display: block;
+  padding: 12px 20px;
+  border-left: 4px solid transparent;
+}
+.admin-sidebar a:hover, .admin-sidebar a.active {
+  background: rgba(255,255,255,.06);
+  border-left: 4px solid var(--cinema-gold);
+  color: var(--cinema-gold);
+}
+.admin-stat-card {
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  padding: 1.4rem;
+}
+.stat-1 { background: linear-gradient(135deg,#e63950,#a8253c); }
+.stat-2 { background: linear-gradient(135deg,#f0b429,#b9860f); }
+.stat-3 { background: linear-gradient(135deg,#3f8efc,#2657b5); }
+.stat-4 { background: linear-gradient(135deg,#2bb673,#1c7c4d); }
